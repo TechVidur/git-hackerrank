@@ -1,0 +1,48 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class solution{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int[][] arr=new int[6][6];
+        for(int i=0;i<6;i++){
+            for(int j=0;j<6;j++){
+                arr[i][j]=sc.nextInt();
+            }
+        }
+         int rowIndex=0,colIndex=0,maxrows=6,maxcols=6,maxValue=0;
+while(true){
+    int rowsum1=sumrows(rowIndex,colIndex,colIndex+2,arr);
+    int rowsum2=arr[rowIndex+1][colIndex+1];
+    int rowsum3=sumrows(rowIndex+2,colIndex,colIndex+2,arr);
+    int totalsum=rowsum1+rowsum2+rowsum3;
+
+    if(totalsum>maxValue || (rowIndex==0 && colIndex==0)){
+        maxValue=totalsum;
+    }
+
+    colIndex++;
+    if(colIndex>=maxcols-2){
+        rowIndex++;
+        colIndex=0;
+    }
+    if(rowIndex>=maxrows-2){
+        System.out.println(maxValue);
+        break;
+    }
+    }
+}
+
+    private static int sumrows(int rowIndex, int startColIndex, int endcolIndex, int[][] arr) {      int sum = 0;
+    for(int col = startColIndex; col <= endcolIndex; col++ ) {
+    sum = sum + arr[rowIndex][col];
+    }
+    return sum; 
+    }
+        
+}
