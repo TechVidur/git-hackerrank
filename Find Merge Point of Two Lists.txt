@@ -1,0 +1,40 @@
+    static int findMergeNode(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+
+        SinglyLinkedListNode p=head1;
+        SinglyLinkedListNode q=head2;
+        int n1=1,n2=1;
+        while(p.next!=null){
+            n1++;
+            p=p.next;
+        }
+        while(q.next!=null){
+            n2++;
+            q=q.next;
+        }
+        p=head1;
+        q=head2;
+        System.out.println(q.data+" "+q.data);
+         //System.out.println(n1+" "+n2);
+        int d=Math.abs(n1-n2);
+        // System.out.println(d);
+        for(int i=0;i<d;i++){
+            if(n1>n2){
+                p=p.next;
+            }
+            else{
+                q=q.next;
+            }
+        }
+       System.out.println(p.data+" "+q.data);
+        while(p.next!=null && q.next!=null){
+            if(p.next==q.next){
+                p=p.next;
+                break;
+            }
+            p=p.next;
+            q=q.next;
+        }
+        // System.out.println(p.data+" "+q.data);
+        return p.data;
+
+    }
