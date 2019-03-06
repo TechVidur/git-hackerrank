@@ -1,0 +1,19 @@
+static int getNode(SinglyLinkedListNode head, int positionFromTail) {
+
+        // if(positionFromTail==0){
+        //     return head.data;
+        // }
+        int count=1;
+        SinglyLinkedListNode current=head;
+        SinglyLinkedListNode current1=head;
+        while(current.next!=null){
+            count++;
+            current=current.next;
+        }
+        int pos=count-positionFromTail-1;
+        for(int i=0;i<pos;i++){
+            current1=current1.next;
+        }
+        return current1.data;
+    }
+
