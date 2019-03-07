@@ -1,0 +1,36 @@
+ static SinglyLinkedListNode reverse(SinglyLinkedListNode head) {
+
+        if(head==null){
+            return head;
+        }
+        SinglyLinkedListNode p=head;
+        SinglyLinkedListNode q=head;
+        //count number of nodes
+        int count=1;
+        while(p.next!=null){
+            count++;
+            p=p.next;
+        }
+        p=head;
+        int i=0;
+        int j=count-1;
+        int temp;
+        //swapping first and last elements
+        while(i<j){
+            int k=0;
+            while(k<j){
+                q=q.next;
+                k++;
+            }
+            //swap logic
+            temp=p.data;
+            p.data=q.data;
+            q.data=temp;
+          
+            i++;j--;
+            p=p.next;
+            q=head;
+        }
+        return head;
+    }
+    

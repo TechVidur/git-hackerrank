@@ -1,0 +1,15 @@
+static void printLinkedList(SinglyLinkedListNode head) {
+       
+if(head == null){
+      System.out.print("");
+      }
+    
+    else{
+    SinglyLinkedListNode current = head; 
+    while(current != null){
+        System.out.println(current.data);
+        current = current.next;}
+   }
+
+    }
+

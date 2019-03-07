@@ -1,0 +1,34 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class findString{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+
+        int n = sc.nextInt();
+        String[] strings=new String[n];
+        for(int i=0;i<n;i++)
+            strings[i]=sc.next();
+
+        int q = sc.nextInt();
+        String[] queries =new String[q];
+        for(int j=0;j<q;j++)
+            queries[j]=sc.next();
+
+        for(int k=0;k<queries.length;k++){
+            int count=0;
+            String st=queries[k];
+            for(int m=0;m<strings.length;m++){
+                if(strings[m].equals(st)){
+                    count++;
+                }
+            }
+            System.out.println(count);
+        }         
+    }
+}

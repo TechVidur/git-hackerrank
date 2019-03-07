@@ -1,0 +1,47 @@
+static SinglyLinkedListNode mergeLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+
+        SinglyLinkedListNode current1=head1;
+        SinglyLinkedListNode current2=head2;
+        while(current1.next!=null){
+            current1=current1.next;
+        }
+        current1.next=head2;
+
+        SinglyLinkedListNode c=head1;
+        SinglyLinkedListNode p=head1;
+        SinglyLinkedListNode q=head1.next;
+       
+        int n=1;
+        while(c.next!=null){
+            n++;
+            c=c.next;
+        }
+        int i=0;
+        while(i<n-1){
+            p=head1;
+            q=head1.next;
+           // System.out.println(p.data+ " "+q.data);
+           int j=0;
+            while(j<n-i-1){
+                if(p.data>q.data){
+                    int temp=p.data;
+                    p.data=q.data;
+                    q.data=temp;
+                }
+              
+                if(q.next!=null){               
+                p=p.next;
+                q=q.next;
+                }
+                else{
+                    break;
+                }
+                j++;
+            }
+            i++;
+        }
+
+        return head1;
+
+
+    }
