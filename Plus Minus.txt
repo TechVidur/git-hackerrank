@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+    int N,i,pos=0,neg=0,zero=0;
+    scanf("%d",&N);
+    int a[N];
+    float p,n,z;
+    for(i=0;i<N;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<N;i++)
+    {
+        if(a[i]>0)
+            pos++;
+        else if(a[i]<0)
+            neg++;
+        else
+            zero++;
+    }
+    p=(float) pos/N;
+    n=(float) neg/N;
+    z=(float) zero/N;
+    printf("%f\n",p);
+    printf("%f\n",n);
+    printf("%f",z);
+    return 0;
+}
