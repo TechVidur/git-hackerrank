@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String args[] ) throws Exception {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+        Scanner in = new Scanner(System.in);
+        String s = in.nextLine();
+        int i,j,c=0,n;
+        char ch;
+        String res;
+        res=s.toLowerCase();
+        for(i=97;i<=122;i++)
+        {
+            for(j=0;j<res.length();j++)
+            {
+                ch=res.charAt(j);
+                n=(int)ch;
+                if(i==n)
+                {
+                    c++;
+                    break;
+                }
+            }
+        }
+        if(c==26)
+            System.out.println("pangram");
+        else
+            System.out.println("not pangram");
+    }
+}

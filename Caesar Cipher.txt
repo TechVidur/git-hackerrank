@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    
+    static String caesarCipher(String s, int k) {
+        String st="";
+         int ne=0;
+        k=k%26;
+     for(int i=0;i<s.length();i++)
+     {
+        
+         char ch=s.charAt(i);
+         if((int)ch>=65&&(int)ch<=90)
+         {
+           
+             ne=(int)ch+k;
+             if(ne>90){
+                 ne=ne-90+64;
+             }
+              st=st+(char)ne; 
+         }
+        else if((int)ch>=97&&(int)ch<=122)
+        {
+             ne=(int)ch+k;
+             if(ne>122){
+                 ne=ne-122+96;
+             }
+              st=st+(char)ne; 
+        }
+         else
+         {
+             st=st+ch;
+        }
+   }
+     return st;   
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        String s = in.next();
+        int k = in.nextInt();
+        String result = caesarCipher(s,k);
+        System.out.println(result);
+        in.close();
+    }
+}

@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int marsExploration(String s) {
+        // Complete this function
+     int i,c=0,n;
+        String st="";
+        char k;       
+        for(i=0;i<s.length()-1;i++)
+        {
+            st=s.substring(i,i+3);
+            if(st.equals("SOS")!=true)
+            {
+                if(st.charAt(0)!='S')
+                    c++;
+                if(st.charAt(1)!='O')
+                    c++;
+                if(st.charAt(2)!='S')
+                    c++;
+            }         
+            i=i+2;
+        }
+        return c;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.next();
+        int result = marsExploration(s);
+        System.out.println(result);
+        in.close();
+    }
+}
