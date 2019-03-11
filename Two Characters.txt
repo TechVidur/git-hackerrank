@@ -1,0 +1,14 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static int twoCharaters(String s,String noDup) {
+        if(s.length()==2){
+            if(s.charAt(0)!=s.charAt(1)){
+                return 2;
+            }
+        
