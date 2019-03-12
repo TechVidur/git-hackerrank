@@ -1,0 +1,9 @@
+    public static void preOrder(Node root) {
+        Node current=root;
+        if(root==null){
+            return ;
+        }
+        System.out.print(current.data+" ");
+        preOrder(current.left);
+        preOrder(current.right);
+    }
