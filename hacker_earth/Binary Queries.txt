@@ -1,0 +1,35 @@
+import java.util.*;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        // Write your code here
+        Scanner sc=new Scanner(System.in);
+        int N=sc.nextInt();
+        int Q=sc.nextInt();
+        int[] arr=new int[N];
+        for(int i=0;i<N;i++)
+            arr[i]=sc.nextInt();
+        for(int i=0;i<Q;i++){
+            int qtype=sc.nextInt();
+            if(qtype==1){
+                //System.out.println("ENTER");
+                int bit=sc.nextInt();
+                if(arr[bit-1]==0)
+                    arr[bit-1]=1;
+                else
+                    arr[bit-1]=0;
+            }
+            else{
+               // System.out.println("ENTER");
+                if(qtype==0){
+                    int leftp=sc.nextInt();
+                    int rightp=sc.nextInt();
+                    if(arr[rightp-1]==1)
+                        System.out.println("ODD");
+                    else
+                        System.out.println("EVEN");
+                }
+            }
+        }
+    }   
+
+}
